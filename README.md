@@ -1,4 +1,6 @@
-# brstck [[Build Status](https://travis-ci.org/brngdsn/brstck.svg?branch=master)](https://travis-ci.org/brngdsn/brstck)
+# brstck [![Build Status](https://travis-ci.org/brngdsn/brstck.svg?branch=master)](https://travis-ci.org/brngdsn/brstck)
+
+thin client
 
 # Angular 2 QuickStart Source
 
