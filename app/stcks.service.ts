@@ -3,7 +3,8 @@ import {Injectable} from 'angular2/core';
 import {Stck} from './stck';
 
 @Injectable()
-export class StckService {
+
+export class StcksService {
 
 	getStcks() {
 		//return Promise.resolve(STCKS);
