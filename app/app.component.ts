@@ -1,9 +1,11 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {Stck} from './stck';
 import {StckEditorComponent} from './stck-editor.component';
+import {StckService} from './stck.service';
 
 @Component({
     selector: 'my-app',
+    providers: [StckService],
     directives: [StckEditorComponent],
     template: `
     	<h1>{{title}}</h1>
@@ -14,25 +16,25 @@ import {StckEditorComponent} from './stck-editor.component';
     `
 })
 
-export class AppComponent { 
+export class AppComponent implements OnInit { 
+
 	title = 'brstck';
-	stcks = STCKS;
+
+	stcks: Stck[];
 	stck: Stck;
+
+	constructor(private _stckService: StckService) {}
+
+	ngOnInit() {
+		this.getStcks();
+	}
+
 	onSelect(stck: Stck) {
 		this.stck = stck;
 	}
-}
 
-var STCKS: Stck[] = [{
-	sid: 0.0,
-	date: new Date(),
-	age: 0.0,
-	weight: 0.0,
-	height: 0.0
-},{
-	sid: 0.1,
-	date: new Date(),
-	age: 0.0,
-	weight: 0.0,
-	height: 0.0
-}];
+	getStcks() {
+		this._stckService.getStcks().then(stcks => this.stcks = stcks);
+	}
+
+}
