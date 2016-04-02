@@ -9,6 +9,7 @@ import {StckService} from './stck.service';
     directives: [StckEditorComponent],
     template: `
     	<h1>{{title}}</h1>
+    	<span *ngIf=!stcks>Acquiring data...</span>
     	<div *ngFor="#_stck of stcks" (click)=onSelect(_stck)>
     		{{_stck.sid}} on {{_stck.date}} <span *ngIf="_stck === stck">***</span>
 			</div>
