@@ -5,10 +5,8 @@ import {StcksService} from './stcks.service';
 
 @Component({
     selector: 'stcks',
-    providers: [StcksService],
     directives: [StckEditorComponent],
     template: `
-    	<h1>{{title}}</h1>
     	<span *ngIf=!stcks>Acquiring data...</span>
     	<div *ngFor="#_stck of stcks" (click)=onSelect(_stck)>
     		{{_stck.sid}} on {{_stck.date}} <span *ngIf="_stck === stck">***</span>
@@ -18,8 +16,6 @@ import {StcksService} from './stcks.service';
 })
 
 export class StcksComponent implements OnInit { 
-
-	title = 'brstck';
 
 	stcks: Stck[];
 	stck: Stck;
