@@ -1,41 +1,49 @@
-import {Component, OnInit} from 'angular2/core';
-import {Stck} from './stck';
+import {Component} from 'angular2/core';
+import {
+	RouteConfig,
+	ROUTER_DIRECTIVES,
+	ROUTER_PROVIDERS
+} from 'angular2/router';
+import {DashboardComponent} from './dashboard.component';
+import {StcksService} from './stcks.service';
+import {StcksComponent} from './stcks.component';
 import {StckEditorComponent} from './stck-editor.component';
-import {StckService} from './stck.service';
+
+@RouteConfig([{
+	path: '/dashboard',
+	name: 'Dashboard',
+	component: DashboardComponent,
+	useAsDefault: true
+},{
+	path: '/stcks',
+	name: 'Stcks',
+	component: StcksComponent
+},{
+	path: '/stcks/:sid/editor',
+	name: 'StckEditor',
+	component: StckEditorComponent
+}])
 
 @Component({
-    selector: 'my-app',
-    providers: [StckService],
-    directives: [StckEditorComponent],
-    template: `
-    	<h1>{{title}}</h1>
-    	<span *ngIf=!stcks>Acquiring data...</span>
-    	<div *ngFor="#_stck of stcks" (click)=onSelect(_stck)>
-    		{{_stck.sid}} on {{_stck.date}} <span *ngIf="_stck === stck">***</span>
-			</div>
-			<stck-editor [stck]=stck></stck-editor>
-    `
+	selector: 'app',
+	providers: [
+		ROUTER_PROVIDERS,
+		StcksService
+	],
+	directives: [
+		ROUTER_DIRECTIVES
+	],
+	template: `
+		<h1>{{title}}</h1>
+		<a [routerLink]="['Dashboard']">dashboard</a>
+		<a [routerLink]="['Stcks']">stcks</a>
+		<br />
+		<br />
+		<router-outlet></router-outlet>
+	`
 })
 
-export class AppComponent implements OnInit { 
-
+export class AppComponent {
 	title = 'brstck';
-
-	stcks: Stck[];
-	stck: Stck;
-
-	constructor(private _stckService: StckService) {}
-
-	ngOnInit() {
-		this.getStcks();
-	}
-
-	onSelect(stck: Stck) {
-		this.stck = stck;
-	}
-
-	getStcks() {
-		this._stckService.getStcks().then(stcks => this.stcks = stcks);
-	}
-
+	constructor(private _stcksService: StcksService) {}
 }
