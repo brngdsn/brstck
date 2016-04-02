@@ -30,7 +30,6 @@ import {Stck} from './stck';
 
 export class StckEditorComponent {
 
-	@Input()
-	stck: Stck;
+	@Input() stck: Stck;
 
 }
