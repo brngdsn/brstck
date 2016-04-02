@@ -1,3 +1,5 @@
+# brstck [[Build Status](https://travis-ci.org/brngdsn/brstck.svg?branch=master)](https://travis-ci.org/brngdsn/brstck)
+
 # Angular 2 QuickStart Source
 
 This repository holds the TypeScript source code of the [angular.io quickstart](https://angular.io/docs/ts/latest/quickstart.html),
