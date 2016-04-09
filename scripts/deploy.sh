@@ -7,6 +7,7 @@ git config --global user.name $USER
 git checkout --orphan gh-pages
 git remote add upstream "https://$GH_TOKEN@github.com/brngdsn/brstck.git"
 git add .
+git add -f app/
 git add -f node_modules/es6-shim/es6-shim.min.js
 git add -f node_modules/systemjs/dist/system-polyfills.js
 git add -f node_modules/angular2/es6/dev/src/testing/shims_for_IE.js
