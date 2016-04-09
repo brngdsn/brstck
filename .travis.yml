@@ -5,7 +5,7 @@ install:
   - true
 script:
   - npm install
-  - npm run tsc
+  - npm run ntsc
 deploy:
   provider: script
   script: scripts/deploy.sh
