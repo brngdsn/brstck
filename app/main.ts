@@ -4,5 +4,5 @@ import {APP_BASE_HREF} from 'angular2/router';
 import {AppComponent} from './app.component';
 
 bootstrap(AppComponent, [
-  provide(APP_BASE_HREF, {useValue: '/'})
+  provide(APP_BASE_HREF, {useValue: '/brstck'})
 ]);
