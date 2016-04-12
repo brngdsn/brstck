@@ -2,8 +2,8 @@
   "name": "brstck",
   "version": "1.0.0",
   "scripts": {
-    "ntsc": "ntsc -p ./",
-    "ntsc:w": "ntsc -w -p ./",
+    "ntsc": "ntsc",
+    "ntsc:w": "ntsc -w",
     "test": "live-server --open=test-runner.html",
     "start:legacy": "concurrently \"npm run tsc:w\" \"npm run lite\" ",
     "start": "concurrently \"npm run ntsc:w\" \"npm run lite\" ",

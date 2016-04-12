@@ -1,8 +1,6 @@
-# brstck
+# brstck [![Build Status](https://travis-ci.org/brngdsn/brstck.svg?branch=master)](https://travis-ci.org/brngdsn/brstck)
 
 for bro stacking
-
-[![wercker status](https://app.wercker.com/status/3f6907da84c3d4955532def1708d5a40/m "wercker status")](https://app.wercker.com/project/bykey/3f6907da84c3d4955532def1708d5a40)
 
 # usage
 
