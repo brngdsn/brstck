@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - "5.9.1"
+install:
+  - true
+script:
+  - npm install
+  - npm run ntsc
+deploy:
+  provider: script
+  script: scripts/deploy.sh
+  on:
+    branch: master
+  skip_cleanup: true
+env:
+  global:
+    - secure: "Qkb8Jbh5gUu9aYoQyb2Rg9qJHFCFHpvnWU/WdbFiL0/YTeWHkRQQJCr9E9aLR/aIGgebG2L5OJgcjdrdG5WfpSKgZmEoFvjdju5RP+ABUM/lcxQFlP1RUvMunnj/I69O6pyYJJQ10XuwuvRpoBhpewLJ6sX5XD5Z8lYdqKLW3HvU6TbdrlCPZaNHqYEunvYYJGQ3WfwAr8ZKULWvHgBVERnFoe6u6fwjUAMMosk2bZLKiMLEjwVaB/Xj91uEY1uEuICmqML+7FccgfROS1gGJyPYRv/SS1Qe3gzU5we4ShqbtHUJAjpbluTFOuxJJKEFrTlLTq/meOPCD7tRhBMjz+PA9MDB+oxmie9NnQvTG3mZN92+31eVuTW4NlKyBRlYGv/dbAwvgRvsL9JVSPLFoF0ZeDrMg5bs0yD1bxCR6GVDH8lYD0LKy7Y4TORBWHPSzsNxWhKUXMWClJeIBsiLuXJwjI55+HdMJXJsqFgBXxSa6QB2fuMnxJGIyTo2QMUOGfBNC0idqZWPfideYjxxvV+OszwqcVKI4EA+7a14DOmSNGgqLLyoflo4jvSKhmy5AT2B18ljHhp4Ha1LUVSzWS0FOPMUrHDMuMOI/cbz05FbGVYyrP1PaNrjItWamCxDNWYUoRcd9oLdqrGLlunPHQK42jQuXTMEP8oO5E5h7yY="
